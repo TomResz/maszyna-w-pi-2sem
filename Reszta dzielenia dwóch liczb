@@ -1,0 +1,24 @@
+Pętla:  POB N
+        ŁAD N
+Rozkaz: POB B
+        POB A
+        ODE B
+        ŁAD A
+        SOM Zakoncz
+Modyf:  POB Rozkaz
+
+        DOD Jeden
+
+        ŁAD Rozkaz
+
+        SOB Pętla    
+Zakoncz:  POB A
+          DOD B
+          ŁAD WYNIK
+          STP
+
+A: RST 10
+B: RST 3
+Wynik: RPA          
+N: RST 1  
+Jeden: RST 1
