@@ -1,0 +1,23 @@
+PĘTLA: POB N
+       ODE JEDEN
+       SOM KONIEC
+       ŁAD N
+ROZKAZ: POB TABLICA
+       DOD SUMA
+       ŁAD SUMA
+       POB ROZKAZ
+       DOD JEDEN
+       ŁAD ROZKAZ
+       SOB PĘTLA
+KONIEC: STP
+
+
+SUMA: RST 0
+N: RST 6
+TABLICA: RST -15
+         RST 4
+         RST 8
+         RST 7
+         RST 1
+         RST 10
+JEDEN: RST 1
