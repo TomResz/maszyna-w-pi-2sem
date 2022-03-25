@@ -1,1 +1,31 @@
+SOB PĘTLA
 
+TO_JEST_A: POB SUMA
+           DOD JEDEN
+           ŁAD SUMA
+           SOB JESLI_A
+           
+PĘTLA: POB N
+       ODE JEDEN
+       SOM KONIEC
+       ŁAD N
+ROZKAZ: POB TABLICA
+        ODE A
+        SOZ TO_JEST_A
+JESLI_A: POB ROZKAZ
+         DOD JEDEN
+         ŁAD ROZKAZ
+         SOB PĘTLA
+KONIEC: STP
+
+TABLICA: RST 65
+         RST 65
+         RST 65
+         RST 10
+         RST 54
+         RST 65
+         RST 14
+N: RST 7
+JEDEN: RST 1
+SUMA: RST 0
+A: RST 65
