@@ -1,0 +1,32 @@
+POB A
+SOZ KONIEC
+
+POB B
+SOZ KONIEC
+
+ODE A
+SOM A_WIEKSZE
+
+B_WIEKSZE: POB WYNIK
+           DOD B
+           ŁAD WYNIK
+           POB A
+           ODE ST1
+           ŁAD A
+           SOZ KONIEC
+           SOB B_WIEKSZE
+A_WIEKSZE: POB WYNIK
+           DOD A
+           ŁAD WYNIK
+           POB B
+           ODE ST1
+           ŁAD B
+           SOZ KONIEC
+           SOB A_WIEKSZE
+KONIEC: STP
+
+
+A: RST 14
+B: RST 4
+WYNIK: RST 0
+ST1: RST 1
