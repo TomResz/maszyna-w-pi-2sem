@@ -1,24 +1,19 @@
-Pętla:  POB N
-        ŁAD N
-Rozkaz: POB B
-        POB A
-        ODE B
-        ŁAD A
-        SOM Zakoncz
-Modyf:  POB Rozkaz
+POB B 
+SOZ KONIEC
+POB A
+SOZ KONIEC
+PĘTLA: ODE B
+       SOM DZIALANIE
+       SOZ BEZRESZTY
+       SOB PĘTLA
+DZIALANIE: DOD B
+           ŁAD WYNIK
+           STP
+BEZRESZTY:  ŁAD WYNIK 
+            STP
+KONIEC:     STP
 
-        DOD Jeden
 
-        ŁAD Rozkaz
-
-        SOB Pętla    
-Zakoncz:  POB A
-          DOD B
-          ŁAD WYNIK
-          STP
-
-A: RST 10
-B: RST 3
-Wynik: RPA          
-N: RST 1  
-Jeden: RST 1
+A: RST 45
+B: RST 42
+WYNIK: RPA
