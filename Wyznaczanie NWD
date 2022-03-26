@@ -1,0 +1,30 @@
+// Wyznaczanie NWD z algorytmu Euklidesa
+PĘTLA:   POB A
+         ODE B
+         SOZ RÓWNE
+         
+         POB B
+         ODE A
+         SOM A_WIEKSZE
+         
+         POB B
+         ODE A
+         ŁAD B
+         SOB PĘTLA
+   
+A_WIEKSZE: 
+           POB A
+           ODE B
+           ŁAD A
+           SOB PĘTLA         
+   
+   
+   
+RÓWNE: POB A
+       ŁAD WYNIK
+       STP
+
+       
+A: RST 125
+B: RST 150
+WYNIK: RPA
