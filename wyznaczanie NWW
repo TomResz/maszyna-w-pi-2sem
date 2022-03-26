@@ -1,0 +1,38 @@
+// Wyznaczanie NWW  
+POB A
+ŁAD A1
+
+POB B
+ŁAD B1
+
+PĘTLA:   POB A1
+         ODE B1
+         SOZ RÓWNE
+         
+         POB B1
+         ODE A1
+         SOM A_WIEKSZE
+         
+         POB A1 // else
+         DOD A
+         ŁAD A1
+         SOB PĘTLA
+   
+A_WIEKSZE:   // IF(A1>B1)
+           POB B1
+           DOD B
+           ŁAD B1
+           SOB PĘTLA         
+   
+   
+   
+RÓWNE: POB A1
+       ŁAD NWW
+       STP
+
+       
+A: RST 10
+B: RST 11
+A1: RPA
+B1: RPA
+NWW: RPA
