@@ -1,0 +1,39 @@
+POB DO_POTEGI   // JEZELI A^0 
+SOZ POTEGA_ZERO  // TO WYNIK=0
+
+POB A       // GDY A=1
+SOZ KONIEC // GDY A=0
+ODE JEDEN
+SOZ A_JEDEN
+
+POB DO_POTEGI
+ODE JEDEN
+ŁAD DO_POTEGI
+
+POB A
+ŁAD WYNIK
+
+PĘTLA: POB WYNIK
+       MNO A
+       ŁAD WYNIK
+       POB DO_POTEGI
+       ODE JEDEN
+       ŁAD DO_POTEGI
+       SOZ KONIEC
+       SOB PĘTLA
+
+
+A_JEDEN:  POB JEDEN
+          ŁAD WYNIK
+          STP
+
+POTEGA_ZERO: POB JEDEN 
+             ŁAD WYNIK
+             STP
+             
+KONIEC: STP
+
+A: RST 5
+DO_POTEGI: RST 4
+JEDEN: RST 1
+WYNIK: RPA
