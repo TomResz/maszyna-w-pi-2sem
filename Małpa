@@ -1,0 +1,145 @@
+        DALEJ: WPR 1
+        
+        ODE MALPA       //Sprawdzamy, czy byla malpa
+        SOZ BYLA_MALPA  //jesli byla, skaczemy
+        DOD MALPA       //jesli nie, idziemy dalej
+        
+        
+        
+        POWROT: ODE STG //odejmujemy stałą G
+        SOM DALEJ // jeśli wynik jest ujemny to znaczy że znak jest mniejszy od L i wpisujemy kolejny
+        ODE ST6 //od G do L jest 6 liter
+        SOM G_DO_L 
+        SOB DALEJ
+        
+        G_DO_L: DOD ST6
+        DOD STG
+        ŁAD TEMP    //ładujemy wprowadzony znak do zmiennej tymczasowej
+        ODE STK
+        SOZ DODAJ_K
+        POB TEMP
+        ODE STL                          
+        SOZ DODAJ_L
+        POB TEMP     //Sprawdzamy, czy literą jest K lub L
+        
+        WSKAZNIK: ŁAD TAB
+        POB WSKAZNIK
+        DOD ST1
+        ŁAD WSKAZNIK
+        POB LICZNIK
+        DOD ST1 
+        ŁAD LICZNIK
+        SOB DALEJ
+        
+        KONIEC: POB ST13
+        WYP 2 
+        POB LICZNIK
+        ŁAD L_TMP
+        POB ST0
+        ŁAD LICZNIK
+        POB L_TMP
+        SDP Write
+        STP
+        
+        BYLA_MALPA: DOD MALPA
+        WYP 2
+        POB LICZNIK_MALP      //jesli byla malpa, wypisujemy ja i odejmujemy 1 od licznika
+        ODE ST1
+        ŁAD LICZNIK_MALP
+        SOZ WYPISZ            //gdy w liczniku bedzie zero konczymy program
+        SOB DALEJ
+        
+        DODAJ_K: POB LICZNIK_K
+        DOD ST1
+        ŁAD LICZNIK_K
+        POB TMP
+        SOB WSKAZNIK
+        
+        DODAJ_L: POB LICZNIK_L
+        DOD ST1
+        ŁAD LICZNIK_L
+        POB TMP
+        SOB WSKAZNIK
+        
+        WYPISZ: POB ST13
+        WYP 2
+        WYPISZ_K: POB LICZNIK_K
+        ODE ST1
+        SOM ENDL
+        ŁAD LICZNIK_K
+        POB STK
+        WYP 2
+        POB SPACJA
+        WYP 2
+        SOB WYPISZ_K
+        
+        ENDL: POB ST13
+        WYP 2
+        WYPISZ_L: POB LICZNIK_L
+        ODE ST1
+        SOM KONIEC
+        ŁAD LICZNIK_L
+        POB STL
+        WYP 2
+        POB SPACJA
+        WYP 2
+        SOB WYPISZ_L
+        
+        ST0: RST 0
+        ST1: RST 1
+        LICZNIK: RST 0
+        ST6: RST 6
+        STG: RST 'G'
+        STL: RST 'L'
+        STK: RST 'K'
+        ST13: RST 13
+        SPACJA: RST 32
+        L_TMP: RPA
+        MALPA: RST '@'
+        LICZNIK_MALP: RST 4 //liczba malp 
+        TEMP: RPA // tymczasowa do sprawdzania K i L
+        LICZNIK_K: RST 0
+        LICZNIK_L: RST 0
+    
+        
+        //podprogram write
+        Write: ŁAD LICZBA
+        POB ZERO
+        DNS
+        POB LICZBA
+        SOM ABS
+        POSIT: DZI ST10
+        MNO ST10
+        ŁAD TMP
+        POB LICZBA
+        ODE TMP
+        DOD ZNAK0
+        DNS
+        POB TMP
+        DZI ST10
+        SOZ KONCZ
+        ŁAD LICZBA
+        SOB POSIT
+        ABS: POB MINUS
+        WYP 2
+        POB ZERO
+        ODE LICZBA
+        ŁAD LICZBA
+        SOB POSIT
+        KONCZ: PZS
+        SOZ WRACAJ
+        WYP 2
+        SOB KONCZ
+        WRACAJ: PWR
+        ZERO: RST 0
+        LICZBA: RPA
+        TMP: RPA
+        ST10: RST 10
+        ZNAK0: RST '0'
+        MINUS: RST '-'
+//podprogram write - koniec
+       
+       
+       TAB: RPA        
+
+        
