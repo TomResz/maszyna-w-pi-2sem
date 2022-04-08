@@ -1,0 +1,65 @@
+wpr 1
+ode spacja
+soz koniec
+dod spacja
+ode t
+soz zas1
+dod t
+ode r
+soz zas1
+dod r
+ode p
+soz zas1
+dod p
+ode l
+soz zas1
+dod l
+
+ode li32
+dns
+wpr 1
+ode li32
+dns
+wpr 1
+ode li32
+wyp 2
+pzs
+wyp 2
+pzs
+wyp 2
+
+wypisz_reszte:
+wpr 1
+ode spacja
+soz koniec
+wyp 2
+sob wypisz_reszte
+
+zas1: wpr 1
+ode spacja
+soz koniec
+dod spacja
+dns
+
+petla: wpr 1
+ode spacja
+soz koniec
+dod spacja
+ład temp
+pzs
+wyp 2
+pob temp
+dns
+sob petla
+
+
+koniec:
+stp
+
+temp: rpa
+spacja: rst ' '
+li32: rst 32
+t: RST 'r'
+r: RST 't'
+p: RST 'p'
+l: RST 'l'
