@@ -1,0 +1,164 @@
+SDP T9
+STP
+ 
+T9: WPR 1
+    ODE spacja
+    SOZ koniec
+    DOD spacja
+    ODE literaa
+    SOZ dwojka
+    DOD literaa
+    ODE literab
+    SOZ dwojka
+    DOD literab
+    ODE literac
+    SOZ dwojka
+    DOD literac
+    ODE literad
+    SOZ trojka
+    DOD literad
+    ODE literae
+    SOZ trojka
+    DOD literae
+    ODE literaf
+    SOZ trojka
+    DOD literaf
+    ODE literag
+    SOZ czworka
+    DOD literag
+    ODE literah
+    SOZ czworka
+    DOD literah
+    ODE literai
+    SOZ czworka
+    DOD literai
+    ODE literaj
+    SOZ piatka
+    DOD literaj
+    ODE literak
+    SOZ piatka
+    DOD literak
+    ODE literal
+    SOZ piatka
+    DOD literal
+    ODE literam
+    SOZ szostka
+    DOD literam
+    ODE literan
+    SOZ szostka
+    DOD literan
+    ODE literao
+    SOZ szostka
+    DOD literao
+    ODE literap
+    SOZ siodemka
+    DOD literap
+    ODE literaq
+    SOZ siodemka
+    DOD literaq
+    ODE literar
+    SOZ siodemka
+    DOD literar
+    ODE literas
+    SOZ siodemka
+    DOD literas
+    ODE literat
+    SOZ osemka
+    DOD literat
+    ODE literau
+    SOZ osemka
+    DOD literau
+    ODE literav
+    SOZ osemka
+    DOD literav
+    ODE literaw
+    SOZ dziewiatka
+    DOD literaw
+    ODE literax
+    SOZ dziewiatka
+    DOD literax
+    ODE literay
+    SOZ dziewiatka 
+    DOD literay
+    ODE literaz
+    SOZ dziewiatka
+    DOD literaz
+    SOB T9
+ 
+ Koniec:
+        STP
+ 
+ dwojka:
+        POB dwa
+        WYP 2
+        SOB T9
+ trojka:
+        POB trzy
+        WYP 2
+        SOB T9
+ czworka:
+         POB cztery
+         WYP 2
+         SOB T9
+ piatka:
+        POB piec
+        WYP 2
+        SOB T9
+ szostka:
+         POB szesc
+         WYP 2
+         SOB T9
+ siodemka:
+          POB siedem
+          WYP 2
+          SOB T9
+ osemka:
+        POB osiem
+        WYP 2
+        SOB T9
+ dziewiatka: 
+             POB dziewiec
+             WYP 2
+             SOB T9 
+
+ 
+
+ dwa: RST 50
+ trzy: RST 51
+ cztery: RST 52
+ piec: RST 53
+ szesc: RST 54
+ siedem: RST 55
+ osiem: RST 56
+ dziewiec: RST 57 
+ 
+ 
+
+ 
+ spacja: RST 32
+ literaa: RST 97
+ literab: RST 98
+ literac: RST 99
+ literad: RST 100
+ literae: RST 101
+ literaf: RST 102
+ literag: RST 103
+ literah: RST 104
+ literai: RST 105
+ literaj: RST 106
+ literak: RST 107
+ literal: RST 108
+ literam: RST 109
+ literan: RST 110
+ literao: RST 111
+ literap: RST 112
+ literaq: RST 113
+ literar: RST 114
+ literas: RST 115
+ literat: RST 116
+ literau: RST 117
+ literav: RST 118
+ literax: RST 120
+ literaw: RST 119
+ literay: RST 121
+ literaz: RST 122 
