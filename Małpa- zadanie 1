@@ -1,0 +1,19 @@
+            PETLA: WPR 1
+           ODE MALPA       //Sprawdzamy, czy byla malpa
+           SOZ BYLA_MALPA  //jesli byla, skaczemy
+           DOD MALPA       //jesli nie, wyprowadzamy znak
+           WYP 2
+           SOB PETLA       //wracamy do petli
+           
+           BYLA_MALPA: DOD MALPA
+           WYP 2
+           POB LICZNIK_MALP      //jesli byla malpa, wypisujemy ja i odejmujemy 1 od licznika
+           ODE ST1
+           ŁAD LICZNIK_MALP
+           SOZ KONIEC       //gdy w liczniku bedzie zero konczymy program
+           SOB PETLA
+           
+           KONIEC: STP
+           MALPA: RST '@'
+           LICZNIK_MALP: RST 4 //liczba malp 
+           ST1: RST 1
