@@ -1,0 +1,77 @@
+SOB PROGRAM
+SOB PRZERW1
+SOB PRZERW2             
+SOB PRZERW3
+SOB PRZERW4
+
+PROGRAM: POB ST10
+         ŁAD WIERSZE
+PETLA1:  POB WIERSZE
+         ODE ST1
+         SOM KONIEC
+         ŁAD WIERSZE
+         POB ST10
+         ŁAD DLUGOSC
+PETLA2:  POB DLUGOSC
+         ODE ST1
+         SOM NEWLINE
+         ŁAD DLUGOSC
+         POB PROCENT
+         WYP 2
+         SOB PETLA2
+NEWLINE: POB ENDL
+         WYP 2
+         SOB PETLA1       
+KONIEC:  PZS
+         STP
+
+PRZERW1: CZM MASKA
+         MAS 15
+         DNS
+         POB ZNAK1
+         WYP 2
+         PZS
+         MSK MASKA
+         STP
+
+PRZERW2: CZM MASKA
+         MAS 15
+         DNS
+         POB ZNAK2
+         WYP 2
+         PZS
+         MSK MASKA
+         PWR
+
+PRZERW3: CZM MASKA
+         MAS 15
+         DNS
+         POB ZNAK3
+         WYP 2
+         PZS
+         MSK MASKA
+         PWR
+
+PRZERW4: CZM MASKA
+         MAS 15
+         DNS
+         POB ZNAK4
+         WYP 2
+         PZS
+         MSK MASKA
+         PWR
+
+WIERSZE:  RPA
+DLUGOSC:  RPA
+ST1:      RST 1
+ST2:      RST 2
+ST3:      RST 3
+ST4:      RST 4
+PROCENT:  RST '%'
+ENDL:     RST 13
+ST10:     RST 10
+MASKA:    RPA
+ZNAK1:      RST '1'
+ZNAK2:      RST '2'
+ZNAK3:      RST '3'
+ZNAK4:      RST '4'
