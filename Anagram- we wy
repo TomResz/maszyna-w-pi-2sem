@@ -1,0 +1,29 @@
+WPR 1
+DNS
+ŁAD POMOC
+SOB ANAGRAM
+
+
+ANAGRAM: WPR 1                   // przyjmowanie liter
+         ODE SPACJA
+         SOZ DO_OPERACJI
+         DOD SPACJA
+         DNS
+         SOB ANAGRAM 
+DO_OPERACJI:                    // wypisywanie liter
+             PZS
+             WYP 2
+             ODE POMOC
+             SOZ KONIEC
+             DOD POMOC
+             SOB DO_OPERACJI
+             
+             
+KONIEC: STP
+
+
+POMOC: RPA
+SPACJA: RST ' '
+
+             
+             
