@@ -1,0 +1,68 @@
+SDP MIESZANIE
+STP
+
+MIESZANIE:
+            wpr 1
+            ode spacja
+            soz koniec
+            dod spacja
+
+            ode r
+            soz RTPL
+            dod r
+            ode t
+            soz RTPL
+            dod t
+            ode p
+            soz RTPL
+            dod p
+            ode l
+            soz RTPL
+            dod l
+
+            ode CAPS_L
+            dns
+            wpr 1
+            ode CAPS_L
+            dns
+            wpr 1
+            ode CAPS_L
+            wyp 2
+            pzs
+            wyp 2
+            pzs
+            wyp 2
+
+wypisz_reszte:
+            wpr 1
+            ode spacja
+            soz koniec
+            wyp 2
+            sob wypisz_reszte
+
+RTPL: wpr 1
+      ode spacja
+      soz koniec
+      dod spacja
+      dns
+
+petla: wpr 1
+      ode spacja
+      soz koniec
+      dod spacja
+      ład temp
+      pzs
+      wyp 2
+      pob temp
+      dns
+      sob petla
+
+koniec: stp
+temp: rpa
+spacja: rst ' '
+CAPS_L: rst 32
+
+t: RST 'r'
+r: RST 't'
+p: RST 'p'
+l: RST 'l'
