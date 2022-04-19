@@ -3,4 +3,4 @@ git clone /link do adresu na githubie/
 wysylanie :
 git add .
 git commit -m "tytul"
-git push // w razie bledu- git pull
+git push // w razie bledu- git pull i potem git push
