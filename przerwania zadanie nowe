@@ -1,0 +1,242 @@
+ ROZKAZ POD;
+czyt wys wei il;
+wyad wea eni
+JEŻELI INT TO @przerw GDY NIE @norm;
+@norm wyak weja dod weak KONIEC;
+@przerw dws
+wyls wes wyws wea;
+pisz wyap wel wea rint stop;
+
+
+w zerowym adresowym musi byc ten rozkaz zawarty!
+szukamy dajac do 0 np 1200 itp.
+
+drugie
+
+    SOB kwadrat
+SOB p1
+SOB p2 
+SOB p3
+SOB p4
+              
+kwadrat: 
+
+
+WPR 1
+ŁAD znak
+
+petla:
+POB znak
+WYP 2
+POB B3
+ODE jeden
+SOZ petla2
+ŁAD B3
+
+modyf:
+SOB petla
+
+petla2:
+POB B2
+WYP 2
+ŁAD B3
+POB B1
+ODE jeden
+SOZ koniec
+ŁAD B1
+SOB petla
+
+koniec:
+STP 
+
+p1:
+CZM MASKA 
+MAS 15 
+DNS 
+POB B1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB znak1
+WYP 2
+POB licznik1
+ODE jeden
+ŁAD licznik1
+SOZ koniec
+PZS 
+MSK MASKA 
+PWR
+
+p2:
+CZM MASKA 
+MAS 15 
+DNS 
+POB B1
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB znak2
+WYP 2
+POB licznik2
+ODE jeden
+ŁAD licznik2
+SOZ koniec
+PZS 
+MSK MASKA 
+PWR
+
+p3:
+CZM MASKA 
+MAS 15 
+DNS 
+POB B1
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB znak3
+WYP 2
+POB licznik3
+ODE jeden
+ŁAD licznik3
+SOZ koniec
+PZS 
+MSK MASKA 
+PWR
+
+p4:
+CZM MASKA 
+MAS 15 
+DNS 
+POB B1
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB znak4
+WYP 2
+POB licznik4 
+ODE jeden
+ŁAD licznik4
+SOZ koniec
+PZS 
+MSK MASKA 
+PWR
+
+
+MASKA: RPA
+B1: RST 10
+B2: RST 10
+B3: RST 10
+P: RST 8
+jeden: RST 1
+znak: RPA
+znak1: RST 49
+znak2: RST 50
+znak3: RST 51
+znak4: RST 52
+licznik1: RST 2
+licznik2: RST 4
+licznik3: RST 6
+licznik4: RST 8
+
+SOB panstwamiasta
+SOB p1
+SOB p2 
+SOB p3
+SOB p4
+
+petla:
+pob znaka
+DOD jeden/pob znaka
+		POB znakb
+
+...
+sob petla
+
+petladuze:
+pob znakA
+pob znakB
+...
+sob petladuze:
+
+p1:
+CZM MASKA 
+MAS 15 
+DNS  
+wyp2 
+PZS 
+MSK MASKA 
+PWR
+
+p2:
+CZM MASKA 
+MAS 15 
+DNS  
+PZS 
+MSK MASKA 
+PWR
+SOB petladuze
+
+znaka: RST 'a'
+p3:
+CZM MASKA 
+MAS 15 
+DNS  
+PZS 
+MSK MASKA 
+PWR
+SOB petlaodtylu
+
+p4:
+SOB koniec
+PWR
+
+koniec: STP
+
