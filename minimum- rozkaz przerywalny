@@ -1,0 +1,22 @@
+ROZKAZ MIN;
+Argumenty 1;
+czyt wys wei il;
+wyad wea eni
+JEŻELI INT TO @przerwa GDY NIE @normalne;
+@normalne czyt wys weja ode weak;
+          JEŻELI Z TO @ujemne GDY NIE @dodatnie;
+          @ujemne wys weja dod weak KONIEC;
+          @dodatnie wys weja przep weak KONIEC; 
+@przerwa czyt wys weja ode weak;
+         JEŻELI Z TO @ujemne1 GDY NIE @dodatnie1;
+         @ujemne1 wys weja dod weak dws;
+         wyls wes wyws wea;
+         pisz wyap wel wea rint KONIEC;
+         @dodatnie1 wys weja przep weak dws;
+         wyls wes wyws wea;
+         pisz wyap wel wea rint;
+          
+ 
+          
+          
+          
