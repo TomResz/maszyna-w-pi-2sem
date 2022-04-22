@@ -1,0 +1,22 @@
+ROZKAZ MAX;
+Argumenty 1;
+czyt wys wei il;
+wyad wea eni  
+JEŻELI INT TO @przerw GDY NIE @norm;
+@norm czyt wys weja ode weak;
+      JEŻELI Z TO @ujemne GDY NIE @dodatnie;
+      @dodatnie wys dod weja weak KONIEC;
+      @ujemne wyak weja ode  weak;
+      wys weja dod  weak KONIEC;
+      
+@przerw czyt wys weja ode weak;
+        JEŻELI Z TO @ujemne1 GDY NIE @dodatnie1;
+        @dodatnie1 wys dod weak dws;
+        wyls wes wyws wea;
+        pisz wyap wel wea rint KONIEC;
+        @ujemne1 wyak weja ode  weak;
+                wys weja dod weak dws;
+                wyls wes wyws wea;
+                pisz wyap wel wea rint;
+         
+        
