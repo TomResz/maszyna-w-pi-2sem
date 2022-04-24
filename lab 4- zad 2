@@ -1,0 +1,80 @@
+Napisać program w języku asemblera Maszyny W, który cyklicznie wypisuje cyfrę pobraną z urządzenia wejściowego na ekran. Zgłoszenie przerwania numer 1 powoduje inkrementację
+cyfry, podczas gdy zgłoszenie przerwania numer 2 jej dekrementację. Zgłoszenie
+przerwania numer 3 powoduje zmianę sposobu wyświetlania (poziomo lub pionowo –
+z wykorzystaniem znaku nowej linii). Zgłoszenie przerwania numer 4 kończy
+program. Program zrealizować bez możliwości wywłaszczenia przerwań.
+
+
+
+
+
+SOB START
+SOB PRZERWA1
+SOB PRZERWA2
+SOB PRZERWA3
+SOB PRZERWA4
+
+START: WPR 1
+       ŁAD X
+LOOP: POB X
+      WYP 2
+      POB Y
+      WYP 2
+      SOB LOOP
+PRZERWA1: CZM MASKA
+          MAS 15
+          DNS
+          
+          POB X
+          DOD JEDEN
+          ŁAD X
+          
+          PZS 
+          MSK MASKA
+          PWR
+PRZERWA2: CZM MASKA
+          MAS 15
+          DNS
+          
+          POB X
+          ODE JEDEN
+          ŁAD X
+          
+          PZS 
+          MSK MASKA
+          PWR
+PRZERWA3: CZM MASKA
+          MAS 15
+          DNS
+          
+          POB Y
+          ODE ENTER
+          SOZ POZIOMONOW
+          
+          POB ENTER
+          ŁAD Y
+
+          PZS
+          MSK MASKA
+          PWR
+POZIOMONOW: POB Y
+            ODE ENTER
+            ŁAD Y
+            PZS
+            MSK MASKA
+            PWR
+PRZERWA4: CZM MASKA
+          MAS 15
+          DNS
+          
+          STP
+          
+          PZS
+          MSK MASKA
+          PWR
+          
+MASKA: RPA
+X: RST 0
+Y: RST 0
+JEDEN: RST 1
+ENTER: RST 13
