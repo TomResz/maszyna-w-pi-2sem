@@ -1,0 +1,36 @@
+// wyznaczanie elementu MXIMUM  w tablicy 
+POB TAB       // POBRANIE PIERWSZEGO ELEMENTU tablicy do porównywania
+ŁAD MAX
+
+PĘTLA: POB ROZMIAR
+       ODE JEDEN
+       SOM KONIEC
+       ŁAD ROZMIAR
+ROZKAZ: POB TAB
+        ŁAD CHECK
+        SOB MAX_OPERACJA       // skok do sprawdzenia czy to jest element maksymalny
+BACK:   POB ROZKAZ    // samokonfiguracja tablicy
+        DOD JEDEN 
+        ŁAD ROZKAZ 
+        SOB PĘTLA
+        
+MAX_OPERACJA: POB CHECK
+              ODE MAX
+              SOM BACK
+              POB CHECK
+              ŁAD MAX
+              SOB BACK      
+
+KONIEC: STP
+
+
+TAB: RST 120
+     RST 10
+     RST 121
+     RST 5
+     RST 1
+     RST 0
+ROZMIAR: RST 6
+JEDEN: RST 1
+CHECK: RPA
+MAX: RPA
