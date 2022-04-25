@@ -1,0 +1,37 @@
+// wyznaczanie elementu minimum w tablicy 
+POB TAB       // POBRANIE PIERWSZEGO ELEMENTU tablicy do porównywania
+ŁAD MIN
+
+PĘTLA: POB ROZMIAR
+       ODE JEDEN
+       SOM KONIEC
+       ŁAD ROZMIAR
+ROZKAZ: POB TAB
+        ŁAD CHECK
+        SOB MIN_OPERACJA       // skok do sprawdzenia czy to jest element minimum
+BACK:   POB ROZKAZ    // samokonfiguracja tablicy
+        DOD JEDEN 
+        ŁAD ROZKAZ 
+        SOB PĘTLA
+        
+
+MIN_OPERACJA: POB MIN
+              ODE CHECK
+              SOM BACK
+              POB CHECK
+              ŁAD MIN
+              SOB BACK
+              
+
+KONIEC: STP
+
+
+TAB: RST 10
+     RST 12
+     RST 5
+     RST 1
+     RST 0
+ROZMIAR: RST 5
+JEDEN: RST 1
+CHECK: RPA
+MIN: RPA
