@@ -1,0 +1,34 @@
+WPR 1
+ŁAD ZNAK
+
+PĘTLA: POB ZNAK
+       WYP 2
+       POB B1
+       ODE JEDEN
+       ŁAD B1
+       SOZ PĘTLA2
+       SOB PĘTLA
+PĘTLA2: POB ENDL  
+        WYP 2
+        POB B1
+        DOD B2
+        ŁAD B1
+        POB B3
+        ODE JEDEN
+        SOZ KONIEC
+        ŁAD B3
+        SOB PĘTLA
+KONIEC: STP
+         
+
+
+
+
+
+JEDEN: RST 1
+ZNAK: RPA
+B1: RST 10
+B2: RST 10
+B3: RST 10
+ENDL: RST 13
+Y: RST 0
