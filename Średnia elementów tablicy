@@ -1,0 +1,48 @@
+POB ROZMIAR
+ŁAD ROZMIARHELP
+
+
+PĘTLA: POB ROZMIAR
+       ODE JEDEN
+       ŁAD ROZMIAR
+       SOM OPERACJE
+ROZKAZ: POB TAB
+        DOD SUMA
+        ŁAD SUMA
+        POB SUMA
+        ŁAD POMOC
+        POB ROZKAZ   // samokonfiguracja tablicy
+        DOD JEDEN
+        ŁAD ROZKAZ
+        SOB PĘTLA
+        
+OPERACJE: POB POMOC
+          ODE ROZMIARHELP
+          ŁAD POMOC
+          SOZ KONIEC_ZWYKŁY
+          SOM WYNIK_RESZTY
+          POB ŚREDNIA
+          DOD JEDEN
+          ŁAD ŚREDNIA
+          SOB OPERACJE
+WYNIK_RESZTY: POB ŚREDNIA
+              DOD ROZMIAR
+              ŁAD RESZTA
+              STP
+
+KONIEC_ZWYKŁY: POB ŚREDNIA
+               DOD JEDEN
+               ŁAD ŚREDNIA
+               STP
+TAB: RST 10
+     RST 5
+     RST 33
+     RST 9
+     RST 16
+POMOC: RPA
+ROZMIAR: RST 5
+ROZMIARHELP: RPA
+ŚREDNIA: RST 0
+RESZTA: RPA
+JEDEN: RST 1
+SUMA: RST 0
