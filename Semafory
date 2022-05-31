@@ -1,0 +1,243 @@
+package semaphores;
+
+import java.util.concurrent.Semaphore;
+
+import static semaphores.Threading.startThread;
+
+public class ABCWithSem {
+
+    static final PrettyPrinter printer = new PrettyPrinter(5);
+    static final int COUNT = 30;
+
+    static final Semaphore a = new Semaphore(0);
+    static final Semaphore b = new Semaphore(2);
+    static final Semaphore c = new Semaphore(0);
+    static final Semaphore d = new Semaphore(0);
+    
+
+    public static void main(String[] args) {
+        startThread(() -> runA());
+        startThread(() -> runB());
+        startThread(() -> runC());
+        startThread(() -> runD());
+    }
+
+    static void runA() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            a.acquire(); // acquire to odpowiednik P(a)
+            printer.output("A ");
+            b.release(); // release to odpowiednik V(b)
+        }
+    }
+
+    static void runB() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            b.acquire(2); // P(b)
+            printer.output("B ");
+            d.release(2); // V(c)
+        }
+    }
+
+    ;
+
+    static void runC() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            c.acquire(2); // P(c)
+            printer.output("C ");
+            a.release(2); // V(a)
+        }
+    }
+
+    ;
+    static void runD() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            d.acquire(2); // P(c)
+            printer.output("D ");
+            c.release(2); // V(a)
+        }
+    }
+
+    ;
+}
+----------------------------------------------------------------------------
+package semaphores;
+
+import java.util.concurrent.Semaphore;
+
+import static semaphores.Threading.startThread;
+
+public class ABCWithSem2 {
+
+    static final PrettyPrinter printer = new PrettyPrinter(9);
+    static final int COUNT = 60;
+
+    static final Semaphore a = new Semaphore(0);  
+    static final Semaphore c = new Semaphore(0);
+    static final Semaphore d = new Semaphore(0);
+    static final Semaphore e = new Semaphore(2);
+    static final Semaphore f = new Semaphore(0);
+    
+    
+
+    public static void main(String[] args) {
+        startThread(() -> runA());
+        startThread(() -> runC());
+        startThread(() -> runD());
+        startThread(() -> runE());
+        startThread(() -> runF());
+    }
+
+    static void runA() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+        	if(i%2==1) 	{
+            a.acquire(2); // acquire to odpowiednik P(a)
+            printer.output("A ");
+            c.release(2); // release to odpowiednik V(b)
+        				}
+        	else {
+        		 a.acquire(2); // acquire to odpowiednik P(a)
+                 printer.output("A ");
+                 f.release(2); // release to odpowiednik V(b)
+        	} 
+        }
+    }
+
+
+
+    static void runC() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+        	{
+        		c.acquire(2); // P(c)
+            	printer.output("C ");
+            	e.release(2); // V(a)
+        	}
+        }
+    }
+
+    ;
+    static void runD() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            d.acquire(2); // P(c)
+            printer.output("D ");
+            a.release(2); // V(a)
+        }
+    }
+
+    ;
+    static void runE() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            e.acquire(2); // acquire to odpowiednik P(a)
+            printer.output("E ");
+            d.release(2); // release to odpowiednik V(b)
+        }
+    }
+
+    static void runF() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            f.acquire(); // acquire to odpowiednik P(a)
+            printer.output("F ");
+            e.release(); // release to odpowiednik V(b)
+        }
+    }
+
+}
+-----------------------------------------------------------------------
+package semaphores;
+
+import java.util.concurrent.Semaphore;
+
+import static semaphores.Threading.startThread;
+
+public class ABCWithSem2 {
+
+    static final PrettyPrinter printer = new PrettyPrinter(9);
+    static final int COUNT = 30;
+
+    static final Semaphore a = new Semaphore(0);
+    static final Semaphore b = new Semaphore(0);
+    static final Semaphore c = new Semaphore(0);
+    static final Semaphore d = new Semaphore(0);
+    static final Semaphore e = new Semaphore(0);
+    static final Semaphore f = new Semaphore(0);
+    static final Semaphore g = new Semaphore(0);
+
+    public static void main(String[] args) {
+        startThread(() -> runA());
+        startThread(() -> runB());
+        startThread(() -> runC());
+        startThread(() -> runD());
+        startThread(() -> runE());
+        startThread(() -> runF());
+        startThread(() -> runG());
+    }
+
+    static void runA() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            a.acquire();
+            printer.output("A ");
+            g.release();
+        }
+    }
+
+    static void runB() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            b.acquire();
+            printer.output("B ");
+            g.release();
+        }
+    }
+
+    static void runC() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            c.acquire();
+            printer.output("C ");
+            g.release();
+        }
+    }
+	
+	static void runD() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            d.acquire();
+            printer.output("D ");
+            g.release();
+        }
+    }
+	
+	static void runE() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            e.acquire();
+            printer.output("E ");
+            g.release();
+        }
+    }
+	
+	static void runF() throws InterruptedException {
+        for (int i = -30; i < COUNT; i++) {
+            f.acquire();
+            printer.output("F ");
+            g.release();
+        }
+    }
+	
+	static void runG() throws InterruptedException {
+        for (int i = 0; i < COUNT; i++) {
+            e.release();
+			g.acquire();
+			d.release();
+			g.acquire();
+			a.release();
+			g.acquire();
+			f.release(2);
+			g.acquire(2);
+			e.release();
+			g.acquire();
+			d.release();
+			g.acquire();
+			a.release();
+			g.acquire();
+			c.release();
+			g.acquire();
+        }
+    }
+
+}
